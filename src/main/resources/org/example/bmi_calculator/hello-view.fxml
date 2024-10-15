@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.bmi_calculator.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" prefHeight="631.0" prefWidth="597.0" spacing="20.0" style="-fx-background-color: rgba(255, 233, 151, 0.6);" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bmi_calculator.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <MenuBar prefHeight="64.0" prefWidth="557.0">
+     <menus>
+       <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
+         <items>
+             <MenuItem onAction="#Close" text="Exit" />
+             <MenuItem fx:id="ClearMenu" onAction="#ClearMenu" onMenuValidation="#ClearMenu" text="Clear" />
+         </items>
+       </Menu>
+       <Menu fx:id="HelpMenu" mnemonicParsing="false" onAction="#HelpMenu" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="help" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+
+    <Label fx:id="BMICalculatorText" prefHeight="55.0" prefWidth="268.0" text="BMI Calculator" textAlignment="CENTER" textFill="#f58ec8">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <font>
+         <Font name="Adelle Sans Devanagari Heavy" size="36.0" />
+      </font></Label>
+   <Label fx:id="MetricUnitsText" prefHeight="30.0" prefWidth="133.0" text="Metric Units">
+      <font>
+         <Font name="Beirut Regular" size="23.0" />
+      </font>
+   </Label>
+   <HBox prefHeight="54.0" prefWidth="359.0">
+      <children>
+         <Label prefHeight="17.0" prefWidth="38.0" />
+         <Label fx:id="WeightText1" prefHeight="36.0" prefWidth="67.0" text="Weight: ">
+            <font>
+               <Font name="Apple LiGothic Medium" size="19.0" />
+            </font>
+         </Label>
+         <TextField fx:id="WeightInput1" prefHeight="50.0" prefWidth="160.0" /> <!-- Removed GridPane.columnIndex -->
+         <Label prefHeight="17.0" prefWidth="38.0" />
+         <Label fx:id="HeightText1" prefHeight="36.0" prefWidth="65.0" text="Height:">
+            <font>
+               <Font name="Apple LiGothic Medium" size="19.0" />
+            </font>
+         </Label>
+         <TextField fx:id="HeightInput1" prefHeight="50.0" prefWidth="160.0" /> <!-- Removed GridPane.rowIndex -->
+      </children>
+   </HBox>
+
+   <Label fx:id="ResultText1" prefHeight="24.0" prefWidth="280.0" text="Result:">
+      <font>
+         <Font size="19.0" />
+      </font></Label>
+   <Button fx:id="GoButton11" onAction="#GoButton1" prefHeight="24.0" prefWidth="158.0" text="Go">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Label prefHeight="60.0" prefWidth="38.0" />
+   <Label fx:id="EnglishUnitsText" prefHeight="30.0" prefWidth="148.0" text="English Units">
+      <font>
+         <Font name="Beirut Regular" size="23.0" />
+      </font>
+   </Label>
+   <HBox prefHeight="54.0" prefWidth="359.0">
+      <children>
+         <Label prefHeight="17.0" prefWidth="38.0" />
+         <Label fx:id="WeightText2" prefHeight="36.0" prefWidth="66.0" text="Waight: ">
+            <font>
+               <Font name="Apple LiGothic Medium" size="19.0" />
+            </font></Label>
+         <TextField fx:id="WeightInput2" prefHeight="50.0" prefWidth="160.0" />
+         <Label prefHeight="17.0" prefWidth="38.0" />
+         <Label fx:id="HeightText2" prefHeight="36.0" prefWidth="61.0" text="Height:">
+            <font>
+               <Font name="Apple LiGothic Medium" size="19.0" />
+            </font></Label>
+         <TextField fx:id="HeightInput2" prefHeight="50.0" prefWidth="160.0" />
+      </children>
+   </HBox>
+   <Label fx:id="ResultText2" prefHeight="24.0" prefWidth="192.0" text="Result:">
+      <font>
+         <Font size="19.0" />
+      </font></Label>
+    <Button fx:id="GoButton2" onAction="#GoButton2" prefHeight="24.0" prefWidth="158.0" text="Go">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+   <Label prefHeight="60.0" prefWidth="38.0" />
 </VBox>
